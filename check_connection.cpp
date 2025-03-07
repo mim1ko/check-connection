@@ -17,7 +17,6 @@ void connection::check_connection::check_connect( char* ip_address,  char* port_
     
     sockfd = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
     if (sockfd == -1) {
-        perror("socket");
         freeaddrinfo(res);
         throw std::invalid_argument{"Cannot create socket"};
     }
