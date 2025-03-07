@@ -1,6 +1,6 @@
 #include "check_connection.h"
 
-void connection::check_connection::check_connect( char* ip_address,  char* port_number){
+void connection::check_connection::check_connect(const char* ip_address, const char* port_number){
     addrinfo hints, *res;
     int sockfd;
     
@@ -33,6 +33,6 @@ void connection::check_connection::check_connect( char* ip_address,  char* port_
     freeaddrinfo(res);
 }
 
-void connection::check_connection::operator()( char* ip_address,  char* port_number){
+void connection::check_connection::operator()(const char* ip_address, const char* port_number){
     connection::check_connection::check_connect(ip_address, port_number);
 }
