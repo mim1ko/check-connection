@@ -16,9 +16,9 @@ namespace connection{
 
     class check_connection{
         private:
-        void check_connect( char* ip_address,  char* port_number);
+        void check_connect(const char* ip_address, const char* port_number);
         public:
-        void operator()( char* ip_address,  char* port_number);
+        void operator()(const char* ip_address, const char* port_number);
     };
 }
 
